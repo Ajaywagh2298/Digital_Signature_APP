@@ -10,12 +10,13 @@ public class RSATest {
         System.out.print("Enter a Username: ");
         String string1= sc.nextLine();
         System.out.print("Enter password: ");
-        String pwd= sc.nextLine();
-        String string2 = new String("CNAS");
-        System.out.println("Comparing " + string1 + " and " + string2
-                + " : " + string1.equals(string2));
+        String string2= sc.nextLine();
+        String userName = new String("CNAS");
+        String pwd = new String("CNAS");
 
-        if(string1.equals(string2)) {
+        System.out.println("Comparing " + string1 + " and " + userName + " : " + string1.equals(userName));
+
+        if(string1.equals(userName) && string2.equals(pwd)) {
             System.out.println("Enter a string: ");
             String password= sc.nextLine();
             KeyPair keyPair = RSAKeyPair.keyPairRSA();
@@ -25,7 +26,7 @@ public class RSATest {
             System.out.println("Encrypt Start");
             System.out.println("Original: " + password);
             byte[] encrypted = RSAEncryptDecrypt.encrypt(password, privateKey);
-            System.out.println("Encrypted: " + new String(encrypted));
+            System.out.print("Encrypted: " + new String(encrypted));
             System.out.println("Encrypt End");
 
             System.out.println();
@@ -38,6 +39,7 @@ public class RSATest {
         }
         else{
             System.out.println("Can't be proceed further");
+
         }
     }
 
